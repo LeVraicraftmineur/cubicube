@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubicube</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+            background: url('fond.png') center/cover no-repeat fixed;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 10% 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 4rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            background: rgba(0, 0, 0, 0.6);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 20px;
+            color: white;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        nav a:hover {
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+
+        section {
+            padding: 50px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            margin: 30px;
+            border-radius: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .discord-button {
+            text-decoration: none;
+            background-color: #7289DA;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .discord-button:hover {
+            background-color: #5b6e9e;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenue sur Cubicube</h1>
+    </header>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="histoire.html">Histoire</a>
+    </nav>
+    <section>
+        <h2>Explorez l'univers de Cubicube</h2>
+        <p>Découvrez un serveur unique, mélangeant survie et aventure, dans un monde rempli de mystères et de défis.</p>
+        <!-- Ajouter le bouton Discord ici -->
+        <a href="https://discord.gg/TfCA4D82" class="discord-button" target="_blank">Rejoindre Discord</a>
+    </section>
+    <footer>
+        <p>&copy; 2025 Cubicube. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
