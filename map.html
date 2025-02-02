@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Interactive</title>
+    <style>
+        body { font-family: 'Poppins', sans-serif; background: url('fond.png') center/cover no-repeat fixed; color: white; text-align: center; }
+        .map-container { position: relative; width: 80%; max-width: 800px; border: 3px solid white; border-radius: 10px; overflow: hidden; margin: auto; }
+        .map-container img { width: 100%; border-radius: 10px; }
+        .point { position: absolute; background: red; width: 12px; height: 12px; border-radius: 50%; cursor: pointer; transform: translate(-50%, -50%); }
+        nav { display: flex; justify-content: center; padding: 15px; background: rgba(0, 0, 0, 0.8); position: absolute; top: 10px; left: 50%; transform: translateX(-50%); border-radius: 10px; }
+        nav a { text-decoration: none; color: white; padding: 10px 20px; border-radius: 10px; transition: 0.3s; background: rgba(255, 255, 255, 0.3); margin: 5px; }
+        nav a:hover { background: rgba(255, 255, 255, 0.6); }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="clans.html">Clans</a>
+        <a href="histoire.html">Histoire</a>
+    </nav>
+    <h1>Carte Interactive</h1>
+    <div class="map-container" id="mapContainer">
+        <img src="map.png" alt="Carte du jeu" id="gameMap" onclick="placePoint(event)">
+    </div>
+    <script>
+        function placePoint(event) {
+            let mapContainer = document.getElementById("mapContainer");
+            let rect = mapContainer.getBoundingClientRect();
+            let x = ((event.clientX - rect.left) / rect.width) * 100;
+            let y = ((event.clientY - rect.top) / rect.height) * 100;
+            let point = document.createElement("div");
+            point.classList.add("point");
+            point.style.left = x + "%";
+            point.style.top = y + "%";
+            mapContainer.appendChild(point);
+        }
+    </script>
+</body>
+</html>
